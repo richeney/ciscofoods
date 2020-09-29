@@ -5,7 +5,7 @@ provider "azurerm" {
 
 locals {
   // simple array
-  // list = csvdecode(file("./resourceGroupNames.csv"))
+  list = csvdecode(file("./resourceGroupNames.csv"))
 
   // use name as the key in a dictionary
   map = {
@@ -28,7 +28,6 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
-/*
 output "list" {
   value = local.list
 }
@@ -36,4 +35,3 @@ output "list" {
 output "map" {
   value = local.map
 }
-*/
